@@ -247,7 +247,7 @@ const notify_1 = require("./notify");
         console.log(summaryText);
         console.log('==========================================');
         // 5. 发送通知 - 只有在有贴吧签到失败时才发送
-        const shouldNotify = process.env.ENABLE_NOTIFY === 'true' && failedCount > 0;
+        const shouldNotify = process.env.ENABLE_NOTIFY === 'true'; //&& failedCount > 0;
         if (shouldNotify) {
             console.log('▶️ 步骤5: 发送通知 (由于签到失败而触发)');
             yield (0, notify_1.sendNotification)(summaryText);
